@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "tertiary-fixed-dim": "#6bd8cb", "secondary": "#565e74", "inverse-primary": "#93ccff", "tertiary-fixed": "#89f5e7", "surface-container-high": "#dce9ff", "secondary-fixed": "#dae2fd", "surface-container-lowest": "#ffffff", "inverse-on-surface": "#eaf1ff", "surface": "#f8f9ff", "on-surface-variant": "#3f4850", "on-error-container": "#93000a", "on-primary-fixed": "#001d31", "secondary-container": "#dae2fd", "on-background": "#0b1c30", "surface-variant": "#d3e4fe", "on-surface": "#0b1c30", "on-secondary-container": "#5c647a", "on-secondary-fixed-variant": "#3f465c", "on-primary-container": "#fdfcff", "surface-bright": "#f8f9ff", "on-primary": "#ffffff", "tertiary": "#00685f", "primary-fixed": "#cce5ff", "primary-container": "#007bb9", "outline": "#707881", "tertiary-container": "#008378", "surface-container": "#e5eeff", "error": "#ba1a1a", "on-tertiary": "#ffffff", "background": "#f8f9ff", "on-secondary": "#ffffff", "surface-dim": "#cbdbf5", "surface-tint": "#006398", "on-primary-fixed-variant": "#004b73", "on-secondary-fixed": "#131b2e", "error-container": "#ffdad6", "on-tertiary-fixed": "#00201d", "inverse-surface": "#213145", "surface-container-highest": "#d3e4fe", "primary": "#006194", "on-tertiary-fixed-variant": "#005049", "outline-variant": "#bfc7d2", "secondary-fixed-dim": "#bec6e0", "surface-container-low": "#eff4ff", "primary-fixed-dim": "#93ccff", "on-tertiary-container": "#f4fffc" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "margin-sm": "1rem", "space-md": "1rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "margin": "2.5rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "gutter": "1.5rem" }, "fontFamily": { "headline-xl-mobile": [ "Plus Jakarta Sans" ], "display-lg-mobile": [ "Plus Jakarta Sans" ], "body-lg": [ "Inter" ], "body-md": [ "Inter" ], "headline-xl": [ "Plus Jakarta Sans" ], "body-sm": [ "Inter" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "label-md": [ "Inter" ], "label-xs": [ "Inter" ], "headline-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-xl-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "display-lg-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-lg": [ "16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-xl": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ], "display-lg": [ "48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "label-xs": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "headline-md": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between py-space-md"><div class="px-space-md"><div class="flex items-center gap-space-sm px-space-sm py-space-sm mb-space-lg"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container"><span class="material-symbols-outlined text-lg">description</span></div><div><span class="font-headline-sm text-headline-sm font-bold text-on-surface block leading-tight">Payperless</span><span class="font-label-xs text-label-xs text-on-surface-variant block uppercase tracking-wider">Enterprise Vault</span></div></div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="dashboard" href="#"><span class="material-symbols-outlined text-lg">dashboard</span>Dashboard</a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="documents-vault" href="#"><span class="material-symbols-outlined text-lg">folder_shared</span>Documents Vault</a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="upload-and-scan" href="#"><span class="material-symbols-outlined text-lg">document_scanner</span>Upload &amp; Scan</a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="analytics" href="#"><span class="material-symbols-outlined text-lg">insights</span>Analytics</a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="security-and-settings" href="#"><span class="material-symbols-outlined text-lg">verified_user</span>Security &amp; Settings</a></nav></div><div class="px-space-md space-y-space-md"><div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs"><div class="flex justify-between items-center text-label-xs font-label-xs"><span class="text-on-surface-variant font-medium">Cloud Vault Quota</span><span class="font-semibold text-primary">68%</span></div><div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary rounded-full" style="width: 68%"></div></div><p class="font-label-xs text-label-xs text-on-surface-variant">34.2 GB of 50 GB encrypted</p></div><div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VsKC7_N98uU55JQDfxmOnSqwHGZBiKOvNMWvgi_0t30fknRlV9G_rzcUuxkRMP0PGbkIaMjSFoA8eP9_Z56INwEcHucfk1RVtA5-Fu-YWTLvgHsxodQrKh75LtdoaEmeQIPB9hXQ0dlcIJzASy7Fq2dLzRYCVEFghqYqNKcNy4dKoGvhJNYRrAwWogsFuaUum1vTtgJQaPGxi6lTWavCKtsHr5cXhSExdV4eRzQJAVs3_5EPHPGfAOHWU"/><div class="flex-1 min-w-0"><p class="font-label-md text-label-md text-on-surface font-semibold truncate">Alex Morgan Pro</p><p class="font-label-xs text-label-xs text-on-surface-variant truncate">Compliance Officer</p></div><button class="text-on-surface-variant hover:text-on-surface flex items-center justify-center p-space-xs" type="button"><span class="material-symbols-outlined text-base">expand_more</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md flex-1 max-w-md"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-lg">search</span><input class="w-full pl-9 pr-4 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant outline-none focus:bg-surface-container transition-all" placeholder="Search docs, tax tags, metadata..." type="text"/></div></div><div class="flex items-center gap-space-md"><button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors relative" type="button"><span class="material-symbols-outlined text-lg">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><button class="flex items-center gap-space-xs bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md px-space-md py-space-sm rounded-lg transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-base">add</span><span>Add Document</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VsKC7_N98uU55JQDfxmOnSqwHGZBiKOvNMWvgi_0t30fknRlV9G_rzcUuxkRMP0PGbkIaMjSFoA8eP9_Z56INwEcHucfk1RVtA5-Fu-YWTLvgHsxodQrKh75LtdoaEmeQIPB9hXQ0dlcIJzASy7Fq2dLzRYCVEFghqYqNKcNy4dKoGvhJNYRrAwWogsFuaUum1vTtgJQaPGxi6lTWavCKtsHr5cXhSExdV4eRzQJAVs3_5EPHPGfAOHWU"/></div></header><main class="relative pt-16 bg-surface min-h-screen px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- Dynamic Top Bar & Security Banner -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">Bom dia, Alex</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container text-tertiary font-label-xs text-label-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          Sincronização Ativa · Frankfurt Vault
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm text-on-surface-variant font-label-xs text-label-xs">
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest px-2.5 py-1 rounded-md shadow-sm">
+<span class="material-symbols-outlined text-sm text-primary">verified</span>
+          128 documentos protegidos
+        </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest px-2.5 py-1 rounded-md shadow-sm">
+<span class="material-symbols-outlined text-sm text-tertiary">lock</span>
+          Zero-Knowledge Ativo
+        </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest px-2.5 py-1 rounded-md shadow-sm">
+<span class="material-symbols-outlined text-sm text-secondary">database</span>
+          Quota: 1.4 GB / 5 GB (28%)
+        </span>
+</div>
+</div>
+<!-- Actions & Filter Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="inline-flex p-1 bg-surface-container rounded-lg font-label-md text-label-md">
+<button class="px-3 py-1.5 rounded bg-surface-container-lowest text-on-surface font-semibold shadow-sm transition-all" type="button">Maio 2026</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface transition-all" type="button">2.º Trimestre</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface transition-all" type="button">Ano 2026</button>
+</div>
+<div class="relative inline-block text-left" id="addDocDropdownWrapper">
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-4 py-2.5 rounded-lg shadow-sm transition-all duration-150" id="addDocBtn" type="button">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>+ Adicionar Documento</span>
+<span class="material-symbols-outlined text-sm ml-1">expand_more</span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-56 rounded-xl bg-surface-container-lowest shadow-xl p-1.5 z-50 transition-all" id="addDocMenu">
+<a class="flex items-center gap-2.5 px-3 py-2 text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-base">document_scanner</span>
+            Digitalizar com Câmara
+          </a>
+<a class="flex items-center gap-2.5 px-3 py-2 text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-base">upload_file</span>
+            Carregar PDF ou Imagem
+          </a>
+<a class="flex items-center gap-2.5 px-3 py-2 text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-base">forward_to_inbox</span>
+            Encaminhar por E-mail
+          </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Metric / KPI Bento Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Card 1: Gastos Mensais -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-on-surface-variant font-semibold">Gastos Mensais</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-base">account_balance_wallet</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">€842.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ €1.200 teto</span>
+</div>
+<p class="font-label-xs text-label-xs text-secondary mb-space-sm font-medium">70.1% do limite utilizado este ciclo</p>
+<!-- Segmented bar -->
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden flex gap-0.5 mb-space-md">
+<div class="h-full bg-primary" style="width: 38%"></div>
+<div class="h-full bg-tertiary" style="width: 22%"></div>
+<div class="h-full bg-primary-fixed-dim" style="width: 15%"></div>
+<div class="h-full bg-surface-container-high" style="width: 25%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-xs text-label-xs">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Habitação €320</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Alim. €184</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span> Softw. €126</span>
+</div>
+</div>
+<!-- Card 2: Processamento IA & OCR -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-on-surface-variant font-semibold">Processamento IA &amp; OCR</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">34 Docs</span>
+<span class="font-label-xs text-label-xs font-semibold text-tertiary bg-surface-container px-2 py-0.5 rounded-full">+8 esta semana</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-space-sm">Taxa de extração sem intervenção</p>
+<!-- Sparkline and accuracy tag -->
+<div class="flex items-center gap-2 mb-space-sm bg-surface-container-low p-2 rounded-lg">
+<svg class="w-16 h-6 text-primary flex-shrink-0" fill="none" viewbox="0 0 64 24">
+<path d="M1 18L13 12L25 15L38 6L50 10L63 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div class="min-w-0">
+<div class="font-label-md text-label-md font-bold text-on-surface">99.8% Precisão</div>
+<div class="font-label-xs text-label-xs text-on-surface-variant truncate">Calibrado Finanças UE</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-tertiary font-label-xs text-label-xs font-semibold">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>Zero correções manuais necessárias</span>
+</div>
+</div>
+<!-- Card 3: Prazos Críticos & Ações -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-on-surface-variant font-semibold">Prazos e Renovações</span>
+<div class="w-8 h-8 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-base">event_upcoming</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">3 Prazos</span>
+<span class="font-label-xs text-label-xs text-error font-medium">Requer atenção</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-space-sm">Notificações inteligentes sincronizadas</p>
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-label-xs font-label-xs bg-surface-container-low px-2 py-1.5 rounded">
+<span class="truncate text-on-surface">Renda Estúdio</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold">14 dias</span>
+</div>
+<div class="flex items-center justify-between text-label-xs font-label-xs bg-surface-container-low px-2 py-1.5 rounded">
+<span class="truncate text-on-surface">Garantia MacBook</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-bold">32 dias</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-label-xs font-label-xs text-on-surface-variant">
+<span>Adobe Creative: 7 dias</span>
+<a class="text-primary font-semibold hover:underline" href="#prazos-section">Ver tudo</a>
+</div>
+</div>
+<!-- Card 4: Segurança & Infraestrutura -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-on-surface-variant font-semibold">Segurança &amp; Cofre</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-base">shield</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">AES-256 GCM</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-space-sm">Hardware Enclave Ativado</p>
+<div class="bg-surface-container-low p-2.5 rounded-lg space-y-1">
+<div class="flex items-center gap-1.5 text-label-xs font-label-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-tertiary">public</span>
+<span>Servidor Soberano: UE (Alemanha)</span>
+</div>
+<div class="flex items-center gap-1.5 text-label-xs font-label-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-primary">verified_user</span>
+<span>Auditado RGPD Art. 32</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs flex items-center gap-1.5 text-tertiary font-label-xs text-label-xs font-bold">
+<span class="material-symbols-outlined text-sm">security_update_good</span>
+<span>Assinatura Criptográfica Válida</span>
+</div>
+</div>
+</div>
+<!-- Main Content Split (65% Document Management / 35% Smart Dropzone & Deadlines) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (65% -> 8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Table Controls Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Documentos Recentes</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-bold">48 no cofre</span>
+</div>
+<!-- Secondary Actions -->
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-base">filter_list</span>
+              Filtrar
+            </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-base">file_download</span>
+              Exportar
+            </button>
+</div>
+</div>
+<!-- Filter Pill Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none mb-space-md">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold whitespace-nowrap shadow-sm" type="button">Todos (48)</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors" type="button">Faturas (18)</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors" type="button">Contratos (6)</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors" type="button">Recibos (16)</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors" type="button">Garantias (8)</button>
+</div>
+<!-- Desktop Vault Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider">
+<th class="py-3 px-3.5 rounded-l-lg font-semibold">Documento / Entidade</th>
+<th class="py-3 px-3 font-semibold">Data Arquivo</th>
+<th class="py-3 px-3 font-semibold text-right">Valor Líquido</th>
+<th class="py-3 px-3 font-semibold">Estado de Validação</th>
+<th class="py-3 px-3 rounded-r-lg text-right font-semibold">Ação</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-3.5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">receipt_long</span>
+</div>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface text-sm truncate">WeWork Berlin</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Fatura · Escritório Compartilhado</p>
+</div>
+</td>
+<td class="py-3 px-3 text-on-surface-variant whitespace-nowrap">
+                  Ontem, 16:42
+                </td>
+<td class="py-3 px-3 text-right font-headline-sm text-headline-sm text-sm font-bold text-on-surface whitespace-nowrap">
+                  €142.50
+                </td>
+<td class="py-3 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-label-xs text-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs">auto_awesome</span> Validado IA
+                    </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-xs text-label-xs font-medium">
+                      Pago
+                    </span>
+</div>
+</td>
+<td class="py-3 px-3 text-right whitespace-nowrap">
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface inline-flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface inline-flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-3.5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">verified</span>
+</div>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface text-sm truncate">Apple Store Paris</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Garantia &amp; Fatura · MacBook Pro</p>
+</div>
+</td>
+<td class="py-3 px-3 text-on-surface-variant whitespace-nowrap">
+                  12 Mai 2026
+                </td>
+<td class="py-3 px-3 text-right font-headline-sm text-headline-sm text-sm font-bold text-on-surface whitespace-nowrap">
+                  €1,479.00
+                </td>
+<td class="py-3 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-label-xs text-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs">shield</span> Garantia 2028
+                    </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-low text-secondary font-label-xs text-label-xs font-medium">
+                      Protegido
+                    </span>
+</div>
+</td>
+<td class="py-3 px-3 text-right whitespace-nowrap">
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface inline-flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface inline-flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-3.5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">history_edu</span>
+</div>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface text-sm truncate">Contrato de Arrendamento</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Contrato · Habitação Residencial</p>
+</div>
+</td>
+<td class="py-3 px-3 text-on-surface-variant whitespace-nowrap">
+                  01 Mai 2026
+                </td>
+<td class="py-3 px-3 text-right font-headline-sm text-headline-sm text-sm font-bold text-on-surface whitespace-nowrap">
+                  €1,850.00/mês
+                </td>
+<td class="py-3 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-xs text-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs">draw</span> Assinado Digital
+                    </span>
+</div>
+</td>
+<td class="py-3 px-3 text-right whitespace-nowrap">
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface inline-flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface inline-flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-3.5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">photo_camera</span>
+</div>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface text-sm truncate">Fnac Darty · Sony A7 IV</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Fatura e Garantia Equipamento</p>
+</div>
+</td>
+<td class="py-3 px-3 text-on-surface-variant whitespace-nowrap">
+                  14 Jan 2026
+                </td>
+<td class="py-3 px-3 text-right font-headline-sm text-headline-sm text-sm font-bold text-on-surface whitespace-nowrap">
+                  €2,499.00
+                </td>
+<td class="py-3 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-label-xs text-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs">verified</span> Garantia Ativa (18 m)
+                    </span>
+</div>
+</td>
+<td class="py-3 px-3 text-right whitespace-nowrap">
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface inline-flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface inline-flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-3.5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">cloud_done</span>
+</div>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface text-sm truncate">Amazon Web Services EMEA</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Software &amp; Infraestrutura Cloud</p>
+</div>
+</td>
+<td class="py-3 px-3 text-on-surface-variant whitespace-nowrap">
+                  28 Abr 2026
+                </td>
+<td class="py-3 px-3 text-right font-headline-sm text-headline-sm text-sm font-bold text-on-surface whitespace-nowrap">
+                  €84.50
+                </td>
+<td class="py-3 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-xs text-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs">savings</span> Dedutível
+                    </span>
+</div>
+</td>
+<td class="py-3 px-3 text-right whitespace-nowrap">
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface inline-flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface inline-flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-md mt-space-sm bg-surface-container-low px-space-md py-space-sm rounded-lg">
+<div class="font-label-xs text-label-xs text-on-surface-variant">
+            A apresentar 1-5 de 48 documentos guardados com criptografia de ponta a ponta
+          </div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs shadow-sm hover:bg-surface-container transition-colors disabled:opacity-50" disabled="" type="button">Anterior</button>
+<span class="font-label-xs text-label-xs font-bold text-primary px-2">1</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs shadow-sm hover:bg-surface-container transition-colors" type="button">2</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs shadow-sm hover:bg-surface-container transition-colors" type="button">Seguinte</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (35% -> 4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Critical Deadlines & Renewals Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm" id="prazos-section">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">alarm</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Prazos Iminentes</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-semibold">3 Ativos</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-space-md">Lembretes proativos calculados via IA de conformidade</p>
+<div class="space-y-space-sm">
+<!-- Item 1 (Red / High priority) -->
+<div class="p-space-sm rounded-xl bg-surface-container-low transition-all hover:bg-surface-container">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Adobe Creative Cloud</span>
+<span class="px-2 py-0.5 rounded-md bg-error-container text-error font-label-xs text-label-xs font-bold">7 dias</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-space-xs">Renovação anual automática (€65.99/mês)</p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-secondary">Prevenção de débito</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-primary font-label-xs text-label-xs font-semibold shadow-sm hover:bg-surface-container-high transition-colors" type="button">Gerir</button>
+</div>
+</div>
+<!-- Item 2 (Amber / Medium priority) -->
+<div class="p-space-sm rounded-xl bg-surface-container-low transition-all hover:bg-surface-container">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Contrato Estúdio Criativo</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-primary font-label-xs text-label-xs font-bold">14 dias</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-space-xs">Fim do período de aviso prévio de cessação</p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-secondary">Data limite: 15 Junho</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-primary font-label-xs text-label-xs font-semibold shadow-sm hover:bg-surface-container-high transition-colors" type="button">Rever Cláusulas</button>
+</div>
+</div>
+<!-- Item 3 (Blue / Regular) -->
+<div class="p-space-sm rounded-xl bg-surface-container-low transition-all hover:bg-surface-container">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Garantia MacBook Pro M3</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-tertiary font-label-xs text-label-xs font-bold">32 dias</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-space-xs">AppleCare standard expira em breve</p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-secondary">Expansão elegível</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-primary font-label-xs text-label-xs font-semibold shadow-sm hover:bg-surface-container-high transition-colors" type="button">Ver Cobertura</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick AI Dropzone Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Importação IA Instantânea</h2>
+<span class="material-symbols-outlined text-primary text-xl">cloud_upload</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-space-md">Extracção automatizada com motor de conformidade tributária</p>
+<!-- Dropzone Box -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer transition-all hover:bg-surface-container" id="dropzoneContainer">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm mb-space-sm">
+<span class="material-symbols-outlined text-2xl">upload_file</span>
+</div>
+<p class="font-label-md text-label-md font-bold text-on-surface mb-0.5">Arraste faturas ou contratos</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-space-sm">Suporta PDF, PNG, JPEG, TIFF (até 25 MB)</p>
+<span class="px-3 py-1 rounded-md bg-primary text-on-primary font-label-xs text-label-xs font-semibold shadow-sm">Navegar Ficheiros</span>
+<input accept=".pdf,.png,.jpg,.jpeg,.tiff" class="hidden" id="fileUploadInput" multiple="" type="file"/>
+</div>
+<!-- Inbound Dedicated Mailbox -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-1.5 mb-1 text-primary font-label-xs text-label-xs font-semibold">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+<span>Caixa de Entrada Automatizada</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-2">Encaminhe faturas do seu email direto para o cofre:</p>
+<div class="flex items-center justify-between bg-surface-container-lowest px-2.5 py-1.5 rounded text-on-surface font-label-xs text-label-xs shadow-sm">
+<span class="font-mono truncate select-all">alex@inbox.payperless.app</span>
+<button class="text-primary hover:text-primary-container p-0.5 transition-colors" id="copyMailBtn" title="Copiar endereço" type="button">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Add document dropdown toggle
+  const addDocBtn = document.getElementById('addDocBtn');
+  const addDocMenu = document.getElementById('addDocMenu');
+
+  if (addDocBtn && addDocMenu) {
+    addDocBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      addDocMenu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!addDocMenu.contains(e.target) && e.target !== addDocBtn) {
+        addDocMenu.classList.add('hidden');
+      }
+    });
+  }
+
+  // Interactive dropzone click trigger
+  const dropzone = document.getElementById('dropzoneContainer');
+  const fileInput = document.getElementById('fileUploadInput');
+
+  if (dropzone && fileInput) {
+    dropzone.addEventListener('click', () => {
+      fileInput.click();
+    });
+
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('bg-surface-container-high');
+    });
+
+    dropzone.addEventListener('dragleave', () => {
+      dropzone.classList.remove('bg-surface-container-high');
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('bg-surface-container-high');
+      if (e.dataTransfer.files.length > 0) {
+        alert(`${e.dataTransfer.files.length} ficheiro(s) adicionados ao fluxo de processamento Zero-Knowledge.`);
+      }
+    });
+  }
+
+  // Copy email interaction
+  const copyBtn = document.getElementById('copyMailBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('alex@inbox.payperless.app').then(() => {
+        const icon = copyBtn.querySelector('span');
+        if (icon) {
+          icon.textContent = 'check';
+          setTimeout(() => {
+            icon.textContent = 'content_copy';
+          }, 1800);
+        }
+      });
+    });
+  }
+</script></main></div></body></html>

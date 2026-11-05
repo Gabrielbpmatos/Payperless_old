@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payperless — Smart invoice, contract &amp; warranty management</title>
+<!-- Google Fonts: Geist, Geist Mono, Inter & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&amp;family=Geist+Mono:wght@400;500;600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            vault: {
+              50: '#FAFAFA',
+              100: '#F4F4F5',
+              200: '#E4E4E7',
+              300: '#D4D4D8',
+              400: '#A1A1AA',
+              500: '#71717A',
+              600: '#52525B',
+              700: '#3F3F46',
+              800: '#27272A',
+              900: '#18181B',
+              950: '#09090B'
+            },
+            accent: {
+              DEFAULT: '#006194',
+              hover: '#004f7a',
+              subtle: '#EFF6FF'
+            },
+            emerald: {
+              glow: '#059669',
+              badge: '#ECFDF5'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Geist', 'sans-serif'],
+            mono: ['Geist Mono', 'monospace']
+          },
+          boxShadow: {
+            'vault-card': '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.03)',
+            'vault-elevated': '0 12px 36px -10px rgba(0, 0, 0, 0.08), 0 4px 12px -4px rgba(0, 0, 0, 0.04)'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-white text-vault-950 font-sans antialiased selection:bg-vault-900 selection:text-white">
+<!-- TOP EUROPEAN TRUST BANNER -->
+<div class="border-b border-vault-200 bg-vault-50 text-[12px] text-vault-600 py-2 px-4 text-center tracking-tight">
+<div class="max-w-7xl mx-auto flex items-center justify-center gap-2.5">
+<span class="inline-flex items-center gap-1.5 text-vault-900 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>Infrastructure hosted in the European Union (GDPR)</span>
+</span>
+<span class="text-vault-300">•</span>
+<span class="text-vault-600">Secure AI extraction</span>
+<span class="text-vault-300 hidden sm:inline">•</span>
+<span class="hidden sm:inline font-mono text-[11px] text-vault-500 uppercase">EN / PT</span>
+</div>
+</div>
+<!-- NAVIGATION -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-vault-200 transition-all">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<a class="flex items-center gap-2.5 group" href="#">
+<img alt="Payperless Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrAvNsZsST6paiCMdp4cHzxf8-htF5myG3jmAM9IVorgq-QoTl8H-6Zv5Iw-pO07Y6kbsAzCIgwnTrvoLREm6SA8N8MWv7S54v-fZ0e2JIJ_h3fqLg40LNEuamFV2AMYtcKfoPqjf1flm1Qn0HTytwXdTxY7rBeBDYdqr8ss1zinlXMEQ6KOz3xanW1_At-StV7cHX-pvlfX8g-BZSlWfJOiqTzprUbIq_0ZIJEHoxiXAmeOY3UeNX"/>
+<span class="font-heading font-semibold text-[16px] tracking-tight text-vault-950">Payperless</span>
+</a>
+<nav class="hidden md:flex items-center gap-7 text-[13.5px] font-medium text-vault-600">
+<a class="hover:text-vault-950 transition-colors" href="#features">Features</a>
+<a class="hover:text-vault-950 transition-colors" href="#demo">How It Works</a>
+<a class="hover:text-vault-950 transition-colors" href="#pricing">Pricing</a>
+<a class="hover:text-vault-950 transition-colors" href="#security">Privacy &amp; Security</a>
+<a class="hover:text-vault-950 transition-colors" href="#faq">FAQ</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="inline-flex items-center border border-vault-200 rounded-md p-0.5 text-[11px] font-mono bg-vault-50">
+<button class="px-2 py-0.5 rounded font-semibold text-vault-600 hover:text-vault-950 transition-all" id="btn-pt" onclick="toggleLanguageNotice('pt')">PT</button>
+<button class="px-2 py-0.5 rounded font-semibold bg-vault-900 text-white transition-all" id="btn-en" onclick="toggleLanguageNotice('en')">EN</button>
+</div>
+<a class="hidden sm:inline-block text-[13.5px] font-medium text-vault-700 hover:text-vault-950 px-2.5 py-1.5 transition-colors" href="#pricing">Sign In</a>
+<a class="hidden sm:inline-block text-[13.5px] font-medium text-vault-700 hover:text-vault-950 px-2.5 py-1.5 transition-colors" href="#pricing">Request Early Access</a>
+<a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-vault-950 hover:bg-vault-800 text-white text-[13px] font-medium border border-vault-800 transition-all shadow-sm" href="#demo">
+<span>Try Demo</span>
+</a>
+</div>
+</div>
+</header>
+<!-- HERO SECTION -->
+<section class="pt-20 pb-16 sm:pt-24 sm:pb-20 bg-white border-b border-vault-200/80">
+<div class="max-w-5xl mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vault-50 border border-vault-200 text-vault-800 text-[12px] font-medium tracking-tight mb-8 shadow-2xs">
+<span class="material-symbols-outlined text-sm text-emerald-600">verified</span>
+<span>Smart Invoice &amp; Document Management</span>
+<span class="text-vault-300">|</span>
+<span class="font-mono text-[11px] text-vault-500">Unexposed UI Standard</span>
+</div>
+<h1 class="font-heading text-4xl sm:text-5xl lg:text-[58px] font-bold text-vault-950 tracking-[-0.035em] leading-[1.12] mb-6">
+Less paperwork. More control.<br/><span class="text-[#006194]">All in one place.</span>
+</h1>
+<p class="text-base sm:text-lg text-vault-600 max-w-2xl mx-auto font-normal leading-relaxed mb-9 tracking-tight font-sans">
+Store, organize, and find invoices, contracts, and warranties in one place. Payperless uses artificial intelligence to extract relevant information from your documents, saving you time on everyday management.
+</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-7">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-vault-950 hover:bg-vault-800 text-white font-medium text-[14px] shadow-sm transition-all border border-vault-800" href="#demo">
+<span>Try Interactive Demo</span>
+<span class="material-symbols-outlined text-base">arrow_downward</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white hover:bg-vault-50 text-vault-800 border border-vault-200 font-medium text-[14px] transition-all" href="#pricing">
+<span class="material-symbols-outlined text-base text-vault-500">person_add</span>
+<span>Request Early Access</span>
+</a>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-[12px] text-vault-500">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-emerald-600">check_circle</span>
+<span>No credit card required</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-emerald-600">check_circle</span>
+<span>No contract lock-in</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-emerald-600">check_circle</span>
+<span>Secure EU storage</span>
+</span>
+</div>
+</div>
+</section>
+<!-- PRODUCT SHOWCASE: VAULT & INSPECTOR (3-PANEL INTERACTIVE DESKTOP WINDOW) -->
+<section class="py-16 bg-vault-50/60 border-b border-vault-200" id="demo"><div class="max-w-7xl mx-auto px-4 sm:px-6">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-vault-200">
+<div>
+<div class="inline-flex items-center gap-2 mb-1.5">
+<span class="font-mono text-[11px] uppercase tracking-wider text-[#006194] font-semibold bg-blue-50 border border-blue-200 px-2 py-0.5 rounded">PLATAFORMA WEB · V2.8</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span class="font-mono text-[11px] text-vault-500">Ambiente de Produção</span>
+</div>
+<h2 class="font-heading text-2xl sm:text-3xl font-bold text-vault-950">
+        Painel Inteligente Payperless
+      </h2>
+<p class="text-xs sm:text-sm text-vault-600 mt-1">
+        Centralize despesas, contratos e garantias com extração OCR em tempo real e soberania total de dados na UE.
+      </p>
+</div>
+<div class="mt-4 sm:mt-0 flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-vault-200 text-[11px] font-mono text-vault-700 shadow-2xs">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>app.payperless.pt/dashboard
+      </span>
+<span class="text-[11px] font-mono text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1.5 rounded-lg flex items-center gap-1 font-medium shadow-2xs">
+<span class="material-symbols-outlined text-sm text-emerald-600">verified_user</span>
+        Sincronização Ativa
+      </span>
+</div>
+</div>
+<!-- Desktop Window Container -->
+<div class="bg-white rounded-xl border border-vault-200 shadow-vault-elevated overflow-hidden">
+<!-- Window Title Bar / Chrome -->
+<div class="px-4 py-2.5 bg-vault-100/80 border-b border-vault-200 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#ef4444] border border-[#dc2626]/20 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-[#eab308] border border-[#ca8a04]/20 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-[#22c55e] border border-[#16a34a]/20 inline-block"></span>
+</div>
+<div class="h-4 w-px bg-vault-300"></div>
+<div class="flex items-center gap-1.5 text-xs text-vault-500 font-mono">
+<span class="material-symbols-outlined text-[15px] text-[#006194]">lock</span>
+<span class="text-vault-700 font-medium">https://app.payperless.pt</span>
+<span class="text-vault-400">/</span>
+<span class="text-vault-600">workspace-frankfurt-01</span>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-[11px] font-mono text-vault-500">
+<span class="px-2 py-0.5 rounded bg-white border border-vault-200 text-vault-600">TLS 1.3 · E2EE</span>
+<span class="px-2 py-0.5 rounded bg-emerald-50 border border-emerald-200 text-emerald-700 font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>RGPD Compatível
+        </span>
+</div>
+</div>
+<!-- Application Body: Sidebar + Main Content -->
+<div class="flex flex-col lg:flex-row min-h-[720px] bg-vault-50/30">
+<!-- Left Sidebar -->
+<aside class="w-full lg:w-64 bg-white border-b lg:border-b-0 lg:border-r border-vault-200 p-4 flex flex-col justify-between shrink-0">
+<div class="space-y-6">
+<!-- Workspace Brand & Switcher -->
+<div class="flex items-center justify-between pb-3 border-b border-vault-100">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-md bg-[#006194] text-white flex items-center justify-center font-bold text-xs">
+                P
+              </div>
+<div>
+<p class="text-xs font-bold text-vault-950 font-heading leading-tight">Cofre Pessoal</p>
+<p class="text-[10px] text-vault-500 font-mono">Plano Pro · Frankfurt</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-vault-400 text-base cursor-pointer">unfold_more</span>
+</div>
+<!-- Navigation Items -->
+<nav class="space-y-1">
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-[#006194] text-white text-xs font-semibold shadow-xs" href="#">
+<span class="material-symbols-outlined text-base">dashboard</span>
+<span>Visão Geral</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-vault-600 hover:bg-vault-100 hover:text-vault-900 text-xs font-medium transition-colors" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-vault-500">inventory_2</span>
+<span>Cofre de Documentos</span>
+</div>
+<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-vault-100 text-vault-600">48</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-vault-600 hover:bg-vault-100 hover:text-vault-900 text-xs font-medium transition-colors" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-vault-500">document_scanner</span>
+<span>Digitalização IA</span>
+</div>
+<span class="text-[9px] font-mono px-1 py-0.5 rounded bg-blue-50 text-[#006194] font-semibold border border-blue-200">NOVO</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-vault-600 hover:bg-vault-100 hover:text-vault-900 text-xs font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-base text-vault-500">bar_chart</span>
+<span>Relatórios &amp; Faturas</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-vault-600 hover:bg-vault-100 hover:text-vault-900 text-xs font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-base text-vault-500">verified_user</span>
+<span>Segurança &amp; RGPD</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-vault-600 hover:bg-vault-100 hover:text-vault-900 text-xs font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-base text-vault-500">settings</span>
+<span>Definições</span>
+</a>
+</nav>
+<!-- Storage quota widget -->
+<div class="p-3 rounded-lg bg-vault-50 border border-vault-200 space-y-2">
+<div class="flex items-center justify-between text-[11px]">
+<span class="text-vault-700 font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-[#006194]">cloud</span>
+                Espaço Seguro
+              </span>
+<span class="font-mono text-vault-500 font-semibold text-[10px]">1.4 GB / 10 GB</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-vault-200 overflow-hidden">
+<div class="bg-[#006194] h-full rounded-full" style="width: 14%"></div>
+</div>
+<p class="text-[10px] text-vault-500 font-mono">Backups diários na UE</p>
+</div>
+</div>
+<!-- User Profile Footer -->
+<div class="pt-4 border-t border-vault-100 flex items-center justify-between mt-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-vault-200 flex items-center justify-center font-bold text-xs text-vault-800">
+              AM
+            </div>
+<div class="truncate">
+<p class="text-xs font-semibold text-vault-900 truncate">Alex Morgan</p>
+<p class="text-[10px] text-vault-500 truncate font-mono">alex@morgan.eu</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-vault-400 text-base cursor-pointer hover:text-vault-900">logout</span>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-4 sm:p-6 space-y-6 overflow-hidden">
+<!-- Top Dashboard Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-vault-200/80 bg-white p-4 rounded-xl border border-vault-200 shadow-2xs">
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-vault-400 text-sm">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-vault-50 border border-vault-200 rounded-lg text-xs text-vault-900 placeholder-vault-400 focus:bg-white focus:outline-none focus:border-[#006194]" placeholder="Pesquisar faturas, fornecedores, NIF ou etiquetas..." type="text"/>
+</div>
+<div class="flex items-center gap-2.5">
+<button class="px-3 py-2 rounded-lg bg-vault-100 hover:bg-vault-200 text-vault-700 text-xs font-medium flex items-center gap-1.5 transition-colors border border-vault-200/70">
+<span class="material-symbols-outlined text-sm">notifications</span>
+<span>Alertas</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-[#006194] hover:bg-[#004f7a] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-xs">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>+ Adicionar Documento</span>
+</button>
+</div>
+</div>
+<!-- KPI Stats Cards (4 items) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+<!-- Card 1: Gastos Mensais -->
+<div class="p-4 rounded-xl bg-white border border-vault-200 shadow-2xs space-y-2">
+<div class="flex items-center justify-between text-vault-500">
+<span class="text-xs font-medium">Gastos Mensais</span>
+<span class="material-symbols-outlined text-base text-[#006194]">payments</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold font-mono text-vault-950">€842,00</span>
+<span class="text-[11px] font-mono text-vault-500">/ €1.200 teto</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-vault-100 flex overflow-hidden gap-0.5 mt-2">
+<div class="bg-[#006194] h-full" style="width: 55%"></div>
+<div class="bg-emerald-600 h-full" style="width: 25%"></div>
+<div class="bg-vault-400 h-full" style="width: 10%"></div>
+</div>
+<div class="flex items-center justify-between text-[10px] text-vault-500 font-mono pt-1">
+<span>Habitação 55%</span>
+<span>Alim. 25%</span>
+<span>Softw. 10%</span>
+</div>
+</div>
+<!-- Card 2: Processamento IA & OCR -->
+<div class="p-4 rounded-xl bg-white border border-vault-200 shadow-2xs space-y-2">
+<div class="flex items-center justify-between text-vault-500">
+<span class="text-xs font-medium">Extração IA &amp; OCR</span>
+<span class="material-symbols-outlined text-base text-emerald-600">smart_toy</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold font-mono text-vault-950">34 Docs</span>
+<span class="text-[11px] font-mono text-emerald-600 font-semibold">+8 esta semana</span>
+</div>
+<div class="flex items-center gap-1.5 text-[11px] text-vault-600">
+<span class="font-mono font-bold text-vault-900">99.8%</span> precisão de campos
+            </div>
+<p class="text-[10px] text-vault-500 font-mono">Zero correções manuais necessárias</p>
+</div>
+<!-- Card 3: Prazos e Renovações -->
+<div class="p-4 rounded-xl bg-white border border-vault-200 shadow-2xs space-y-2">
+<div class="flex items-center justify-between text-vault-500">
+<span class="text-xs font-medium">Prazos &amp; Renovações</span>
+<span class="material-symbols-outlined text-base text-amber-500">event_upcoming</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold font-mono text-vault-950">3 Prazos</span>
+<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 font-semibold border border-amber-200">Requer atenção</span>
+</div>
+<div class="text-[11px] text-vault-700 truncate">
+              Renda Estúdio <span class="font-mono font-medium text-vault-900">(14 dias)</span>
+</div>
+<p class="text-[10px] text-vault-500 font-mono">Garantia MacBook (32 dias)</p>
+</div>
+<!-- Card 4: Segurança & Cofre -->
+<div class="p-4 rounded-xl bg-white border border-vault-200 shadow-2xs space-y-2">
+<div class="flex items-center justify-between text-vault-500">
+<span class="text-xs font-medium">Segurança &amp; Cofre</span>
+<span class="material-symbols-outlined text-base text-emerald-600">verified</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold font-mono text-vault-950">AES-256</span>
+<span class="text-[11px] font-mono text-vault-500">GCM Ativo</span>
+</div>
+<div class="text-[11px] text-emerald-700 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Servidor Soberano UE (Alemanha)
+            </div>
+<p class="text-[10px] text-vault-500 font-mono">Auditado RGPD Art. 32</p>
+</div>
+</div>
+<!-- 2-Column Split: Document Table & Right Widgets -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+<!-- Document Vault Table (8 cols) -->
+<div class="xl:col-span-8 bg-white rounded-xl border border-vault-200 shadow-2xs overflow-hidden flex flex-col justify-between">
+<div>
+<!-- Filters header -->
+<div class="p-4 border-b border-vault-200 flex flex-wrap items-center justify-between gap-3 bg-white">
+<div class="flex items-center gap-1.5 overflow-x-auto text-xs">
+<button class="px-2.5 py-1 rounded-md bg-vault-900 text-white font-medium text-[11px]">Todos (48)</button>
+<button class="px-2.5 py-1 rounded-md bg-vault-100 hover:bg-vault-200 text-vault-700 font-medium text-[11px]">Faturas (18)</button>
+<button class="px-2.5 py-1 rounded-md bg-vault-100 hover:bg-vault-200 text-vault-700 font-medium text-[11px]">Contratos (6)</button>
+<button class="px-2.5 py-1 rounded-md bg-vault-100 hover:bg-vault-200 text-vault-700 font-medium text-[11px]">Recibos (16)</button>
+<button class="px-2.5 py-1 rounded-md bg-vault-100 hover:bg-vault-200 text-vault-700 font-medium text-[11px]">Garantias (8)</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded border border-vault-200 text-vault-600 hover:bg-vault-50 text-xs flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    Filtrar
+                  </button>
+<button class="p-1.5 rounded border border-vault-200 text-vault-600 hover:bg-vault-50 text-xs flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-sm">file_download</span>
+                    Exportar CSV
+                  </button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-xs">
+<thead>
+<tr class="border-b border-vault-200 bg-vault-50/60 text-[11px] font-mono text-vault-500 uppercase tracking-wider">
+<th class="py-2.5 px-4 font-semibold">Documento / Fornecedor</th>
+<th class="py-2.5 px-4 font-semibold">Categoria</th>
+<th class="py-2.5 px-4 font-semibold">Data Emissão</th>
+<th class="py-2.5 px-4 font-semibold text-right">Valor Total</th>
+<th class="py-2.5 px-4 font-semibold text-center">Estado</th>
+<th class="py-2.5 px-3 font-semibold text-center">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-vault-100">
+<!-- Row 1 -->
+<tr class="hover:bg-vault-50/70 transition-colors group">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-blue-50 border border-blue-200 flex items-center justify-center text-[#006194]">
+<span class="material-symbols-outlined text-base">receipt_long</span>
+</div>
+<div>
+<p class="font-semibold text-vault-950 font-mono text-xs">EDP Comercial, S.A.</p>
+<p class="text-[11px] text-vault-500 font-mono">FT 2025/94821 · NIF 503504564</p>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-vault-700">
+<span class="px-2 py-0.5 rounded bg-vault-100 text-vault-700 text-[11px] font-medium">Eletricidade</span>
+</td>
+<td class="py-3 px-4 text-vault-600 font-mono text-[11px]">14 Jun 2025</td>
+<td class="py-3 px-4 text-right font-mono font-bold text-vault-950">€68,20</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-mono font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>Validado
+                        </span>
+</td>
+<td class="py-3 px-3 text-center text-vault-400 group-hover:text-vault-700">
+<span class="material-symbols-outlined text-base cursor-pointer hover:text-[#006194]">visibility</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-vault-50/70 transition-colors group">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-vault-100 border border-vault-200 flex items-center justify-center text-vault-700">
+<span class="material-symbols-outlined text-base">apartment</span>
+</div>
+<div>
+<p class="font-semibold text-vault-950 font-mono text-xs">WeWork Berlin Potsdamer</p>
+<p class="text-[11px] text-vault-500 font-mono">INV-DE-88219 · Escritório</p>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-vault-700">
+<span class="px-2 py-0.5 rounded bg-vault-100 text-vault-700 text-[11px] font-medium">Espaço de Trabalho</span>
+</td>
+<td class="py-3 px-4 text-vault-600 font-mono text-[11px]">01 Jun 2025</td>
+<td class="py-3 px-4 text-right font-mono font-bold text-vault-950">€450,00</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-mono font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>Validado
+                        </span>
+</td>
+<td class="py-3 px-3 text-center text-vault-400 group-hover:text-vault-700">
+<span class="material-symbols-outlined text-base cursor-pointer hover:text-[#006194]">visibility</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-vault-50/70 transition-colors group">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-vault-100 border border-vault-200 flex items-center justify-center text-vault-700">
+<span class="material-symbols-outlined text-base">devices</span>
+</div>
+<div>
+<p class="font-semibold text-vault-950 font-mono text-xs">Apple Store Paris Opéra</p>
+<p class="text-[11px] text-vault-500 font-mono">MacBook Pro M3 · Fatura &amp; Garantia</p>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-vault-700">
+<span class="px-2 py-0.5 rounded bg-vault-100 text-vault-700 text-[11px] font-medium">Equipamento</span>
+</td>
+<td class="py-3 px-4 text-vault-600 font-mono text-[11px]">18 Mai 2025</td>
+<td class="py-3 px-4 text-right font-mono font-bold text-vault-950">€2.399,00</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-50 text-[#006194] border border-blue-200 text-[10px] font-mono font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#006194]"></span>Garantia Ativa
+                        </span>
+</td>
+<td class="py-3 px-3 text-center text-vault-400 group-hover:text-vault-700">
+<span class="material-symbols-outlined text-base cursor-pointer hover:text-[#006194]">visibility</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-vault-50/70 transition-colors group">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-vault-100 border border-vault-200 flex items-center justify-center text-vault-700">
+<span class="material-symbols-outlined text-base">history_edu</span>
+</div>
+<div>
+<p class="font-semibold text-vault-950 font-mono text-xs">Contrato de Arrendamento</p>
+<p class="text-[11px] text-vault-500 font-mono">Estúdio Lisboa · Renov. Anual</p>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-vault-700">
+<span class="px-2 py-0.5 rounded bg-vault-100 text-vault-700 text-[11px] font-medium">Contrato Legal</span>
+</td>
+<td class="py-3 px-4 text-vault-600 font-mono text-[11px]">01 Mar 2025</td>
+<td class="py-3 px-4 text-right font-mono font-bold text-vault-950">€950,00/m</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-mono font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>Assinado
+                        </span>
+</td>
+<td class="py-3 px-3 text-center text-vault-400 group-hover:text-vault-700">
+<span class="material-symbols-outlined text-base cursor-pointer hover:text-[#006194]">visibility</span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-vault-50/70 transition-colors group">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-vault-100 border border-vault-200 flex items-center justify-center text-vault-700">
+<span class="material-symbols-outlined text-base">cloud_queue</span>
+</div>
+<div>
+<p class="font-semibold text-vault-950 font-mono text-xs">Amazon Web Services EMEA</p>
+<p class="text-[11px] text-vault-500 font-mono">LU-2025-09912 · Cloud Infra</p>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-vault-700">
+<span class="px-2 py-0.5 rounded bg-vault-100 text-vault-700 text-[11px] font-medium">Software &amp; Nuvem</span>
+</td>
+<td class="py-3 px-4 text-vault-600 font-mono text-[11px]">02 Mai 2025</td>
+<td class="py-3 px-4 text-right font-mono font-bold text-vault-950">€42,15</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-mono font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>Validado
+                        </span>
+</td>
+<td class="py-3 px-3 text-center text-vault-400 group-hover:text-vault-700">
+<span class="material-symbols-outlined text-base cursor-pointer hover:text-[#006194]">visibility</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Pagination bar -->
+<div class="p-3 border-t border-vault-200 flex items-center justify-between text-xs text-vault-500 font-mono bg-vault-50/50">
+<span>A mostrar 5 de 48 documentos</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded border border-vault-200 bg-white text-vault-400 cursor-not-allowed">←</button>
+<button class="px-2 py-1 rounded bg-[#006194] text-white font-bold">1</button>
+<button class="px-2 py-1 rounded border border-vault-200 bg-white text-vault-700 hover:bg-vault-100">2</button>
+<button class="px-2 py-1 rounded border border-vault-200 bg-white text-vault-700 hover:bg-vault-100">3</button>
+<button class="px-2 py-1 rounded border border-vault-200 bg-white text-vault-700 hover:bg-vault-100">→</button>
+</div>
+</div>
+</div>
+<!-- Right Widgets (4 cols) -->
+<div class="xl:col-span-4 space-y-5">
+<!-- Widget 1: Prazos Iminentes -->
+<div class="p-4 rounded-xl bg-white border border-vault-200 shadow-2xs space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-vault-100">
+<div class="flex items-center gap-1.5 text-vault-950 font-bold text-xs">
+<span class="material-symbols-outlined text-amber-500 text-base">alarm</span>
+<span>Prazos Iminentes</span>
+</div>
+<span class="text-[10px] font-mono text-[#006194] hover:underline cursor-pointer">Ver todos</span>
+</div>
+<div class="space-y-2.5">
+<div class="p-2.5 rounded-lg bg-amber-50/50 border border-amber-200/60 flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold text-vault-900">Adobe Creative Cloud</p>
+<p class="text-[10px] text-vault-500 font-mono">Renovação Anual · €35,99</p>
+</div>
+<span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">em 7 dias</span>
+</div>
+<div class="p-2.5 rounded-lg bg-vault-50 border border-vault-200 flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold text-vault-900">Contrato Estúdio Lisboa</p>
+<p class="text-[10px] text-vault-500 font-mono">Data de Prorrogação</p>
+</div>
+<span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-vault-200 text-vault-700">em 14 dias</span>
+</div>
+<div class="p-2.5 rounded-lg bg-vault-50 border border-vault-200 flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold text-vault-900">Garantia MacBook Pro</p>
+<p class="text-[10px] text-vault-500 font-mono">AppleCare Cobertura</p>
+</div>
+<span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-vault-200 text-vault-700">em 32 dias</span>
+</div>
+</div>
+</div>
+<!-- Widget 2: Importação IA Instantânea & Caixa Automatizada -->
+<div class="p-4 rounded-xl bg-white border border-vault-200 shadow-2xs space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-vault-100">
+<div class="flex items-center gap-1.5 text-vault-950 font-bold text-xs">
+<span class="material-symbols-outlined text-[#006194] text-base">cloud_upload</span>
+<span>Entrada Automatizada</span>
+</div>
+<span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">OCR PRONTO</span>
+</div>
+<!-- Drag and drop zone -->
+<div class="border-2 border-dashed border-[#006194]/30 hover:border-[#006194] bg-blue-50/20 rounded-xl p-4 text-center cursor-pointer transition-colors space-y-1.5">
+<div class="w-9 h-9 rounded-full bg-white border border-blue-200 mx-auto flex items-center justify-center text-[#006194] shadow-2xs">
+<span class="material-symbols-outlined text-lg">upload_file</span>
+</div>
+<p class="text-xs font-semibold text-vault-900">Arraste faturas ou recibos</p>
+<p class="text-[10px] text-vault-500">PDF, JPG, PNG ou HEIC até 25 MB</p>
+</div>
+<!-- Dedicated Inbound Email box -->
+<div class="p-3 rounded-lg bg-vault-50 border border-vault-200 space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-mono uppercase text-vault-500 font-semibold">E-MAIL DEDICADO DE RECEÇÃO</span>
+<span class="material-symbols-outlined text-vault-400 text-xs">help</span>
+</div>
+<div class="flex items-center justify-between bg-white border border-vault-200 rounded px-2.5 py-1.5">
+<span class="text-[11px] font-mono text-vault-800 truncate select-all">alex@inbox.payperless.app</span>
+<button class="text-[#006194] hover:text-[#004f7a] text-[10px] font-mono font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">content_copy</span>
+                    Copiar
+                  </button>
+</div>
+<p class="text-[10px] text-vault-500 leading-tight font-sans">
+                  Reencaminhe recibos diretamente para o seu e-mail do cofre para extração e arquivo imediato.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div></section>
+<!-- CORE PRODUCT PILLARS (Three Pillars) -->
+<section class="py-20 bg-white border-b border-vault-200" id="features">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-3xl mb-16">
+<div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-[#006194] mb-3">
+<span class="w-2 h-2 rounded-full bg-[#006194]"></span>
+<span>Value Proposition</span>
+</div>
+<h2 class="font-heading text-3xl sm:text-4xl font-bold text-vault-950 tracking-tight">
+More than storage. Intelligent organization.
+</h2>
+<p class="text-base text-vault-600 mt-4 leading-relaxed font-sans">
+A solution built to replace cluttered desktop folders, drawers full of faded receipts, and hours lost looking for warranties.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Pillar 1 -->
+<div class="p-6 rounded-xl border border-vault-200 bg-vault-50/40 hover:bg-white hover:border-vault-300 transition-all flex flex-col justify-between space-y-6">
+<div>
+<div class="w-10 h-10 rounded-lg bg-white border border-vault-200 flex items-center justify-center font-mono font-bold text-sm text-vault-900 mb-6 shadow-2xs">
+<span class="material-symbols-outlined text-[#006194]">folder_supervised</span>
+</div>
+<h3 class="font-heading text-lg font-bold text-vault-950 mb-2">
+01 — Organized documents
+</h3>
+<p class="text-xs sm:text-sm text-vault-600 leading-relaxed font-sans">
+Invoices, contracts, and warranties unified in a single repository with automatic tags, no longer scattered across folders and emails.
+</p>
+</div>
+<div class="pt-4 border-t border-vault-200/80 font-mono text-[11px] text-vault-500 flex items-center justify-between">
+<span>Unified repository</span>
+<span class="material-symbols-outlined text-sm text-emerald-600">check</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="p-6 rounded-xl border border-vault-200 bg-vault-50/40 hover:bg-white hover:border-vault-300 transition-all flex flex-col justify-between space-y-6">
+<div>
+<div class="w-10 h-10 rounded-lg bg-white border border-vault-200 flex items-center justify-center font-mono font-bold text-sm text-vault-900 mb-6 shadow-2xs">
+<span class="material-symbols-outlined text-[#006194]">auto_awesome</span>
+</div>
+<h3 class="font-heading text-lg font-bold text-vault-950 mb-2">
+02 — Smart extraction
+</h3>
+<p class="text-xs sm:text-sm text-vault-600 leading-relaxed font-sans">
+Artificial intelligence identifies dates, amounts, and vendors with human oversight and instant edits to ensure total precision.
+</p>
+</div>
+<div class="pt-4 border-t border-vault-200/80 font-mono text-[11px] text-vault-500 flex items-center justify-between">
+<span>Human in the loop</span>
+<span class="material-symbols-outlined text-sm text-emerald-600">check</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="p-6 rounded-xl border border-vault-200 bg-vault-50/40 hover:bg-white hover:border-vault-300 transition-all flex flex-col justify-between space-y-6">
+<div>
+<div class="w-10 h-10 rounded-lg bg-white border border-vault-200 flex items-center justify-center font-mono font-bold text-sm text-vault-900 mb-6 shadow-2xs">
+<span class="material-symbols-outlined text-[#006194]">manage_search</span>
+</div>
+<h3 class="font-heading text-lg font-bold text-vault-950 mb-2">
+03 — Instant search &amp; retrieval
+</h3>
+<p class="text-xs sm:text-sm text-vault-600 leading-relaxed font-sans">
+Instant search by Tax ID, vendor, or amount with rapid filters and structured export for expense reports or accounting.
+</p>
+</div>
+<div class="pt-4 border-t border-vault-200/80 font-mono text-[11px] text-vault-500 flex items-center justify-between">
+<span>Search &amp; export</span>
+<span class="material-symbols-outlined text-sm text-emerald-600">check</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PRIVACY & SECURITY EXPERIENCE (4 Technical Cards) -->
+<section class="py-20 bg-vault-50/60 border-b border-vault-200" id="security">
+<div class="max-w-5xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="font-mono text-xs uppercase tracking-wider text-vault-500 font-semibold">
+Security &amp; Privacy
+</span>
+<h2 class="font-heading text-3xl font-bold text-vault-950 mt-1 mb-3">
+Trust starts with transparency.
+</h2>
+<p class="text-sm sm:text-base text-vault-600 font-sans">
+We explain with rigor and clarity how document data is handled, free of hype or misleading claims.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="p-6 rounded-xl border border-vault-200 bg-white space-y-3">
+<div class="flex items-center gap-2.5 text-vault-950 font-semibold text-sm">
+<span class="material-symbols-outlined text-[#006194] text-lg">dns</span>
+<h4 class="font-heading">1. Where are my documents stored?</h4>
+</div>
+<p class="text-xs text-vault-600 leading-relaxed font-sans">
+All data is stored exclusively in secure European Union infrastructure, in strict compliance with General Data Protection Regulation (GDPR) standards.
+</p>
+</div>
+<div class="p-6 rounded-xl border border-vault-200 bg-white space-y-3">
+<div class="flex items-center gap-2.5 text-vault-950 font-semibold text-sm">
+<span class="material-symbols-outlined text-[#006194] text-lg">lock_person</span>
+<h4 class="font-heading">2. Who can access my files?</h4>
+</div>
+<p class="text-xs text-vault-600 leading-relaxed font-sans">
+Only you and users you explicitly authorize can access your files. The Payperless team never reads or inspects your private documents.
+</p>
+</div>
+<div class="p-6 rounded-xl border border-vault-200 bg-white space-y-3">
+<div class="flex items-center gap-2.5 text-vault-950 font-semibold text-sm">
+<span class="material-symbols-outlined text-[#006194] text-lg">psychology</span>
+<h4 class="font-heading">3. How does AI process content?</h4>
+</div>
+<p class="text-xs text-vault-600 leading-relaxed font-sans">
+The extraction model runs in isolated sandboxes reading only required fields (e.g., vendor, date, amount). Your documents are never used to train public LLM models.
+</p>
+</div>
+<div class="p-6 rounded-xl border border-vault-200 bg-white space-y-3">
+<div class="flex items-center gap-2.5 text-vault-950 font-semibold text-sm">
+<span class="material-symbols-outlined text-[#006194] text-lg">delete_forever</span>
+<h4 class="font-heading">4. Can I export or delete my data?</h4>
+</div>
+<p class="text-xs text-vault-600 leading-relaxed font-sans">
+Yes, at any time. Download all original documents and structured CSVs in one click, or permanently delete your account with zero hidden backups.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- USE CASES SECTION -->
+<section class="py-20 bg-white border-b border-vault-200" id="use-cases">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="font-mono text-xs uppercase tracking-wider text-vault-500 font-semibold">
+Use Cases
+</span>
+<h2 class="font-heading text-3xl font-bold text-vault-950 mt-1 mb-3">
+Designed for everyday document workflows.
+</h2>
+<p class="text-sm sm:text-base text-vault-600 font-sans">
+A clear, fast, and frictionless way to keep paperwork organized and accessible.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Use Case 1 -->
+<div class="p-7 rounded-xl border border-vault-200 bg-vault-50/40 hover:bg-white hover:shadow-vault-card transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-vault-900 text-white flex items-center justify-center mb-5">
+<span class="material-symbols-outlined text-xl">home</span>
+</div>
+<h3 class="font-heading text-lg font-bold text-vault-950 mb-2">
+Individuals &amp; Families
+</h3>
+<p class="text-xs sm:text-sm text-vault-600 leading-relaxed mb-6 font-sans">
+Store appliance receipts, warranty slips, and home bills. Pull up valid proof of purchase in seconds without lost or faded paper slips.
+</p>
+</div>
+<div class="pt-4 border-t border-vault-200/80 space-y-2 text-xs text-vault-700">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-sm">check</span>
+<span>Equipment warranties always accessible</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-sm">check</span>
+<span>Utility and telecom service contracts</span>
+</div>
+</div>
+</div>
+<!-- Use Case 2 -->
+<div class="p-7 rounded-xl border border-vault-200 bg-vault-50/40 hover:bg-white hover:shadow-vault-card transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-vault-900 text-white flex items-center justify-center mb-5">
+<span class="material-symbols-outlined text-xl">laptop_mac</span>
+</div>
+<h3 class="font-heading text-lg font-bold text-vault-950 mb-2">
+Freelancers &amp; Contractors
+</h3>
+<p class="text-xs sm:text-sm text-vault-600 leading-relaxed mb-6 font-sans">
+No more chaotic quarterly invoice crunch. Centralize tax deductions and export clean summary batches directly to your accountant.
+</p>
+</div>
+<div class="pt-4 border-t border-vault-200/80 space-y-2 text-xs text-vault-700">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-sm">check</span>
+<span>Automatic VAT ID and total detection</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-sm">check</span>
+<span>Direct spreadsheet and CSV export</span>
+</div>
+</div>
+</div>
+<!-- Use Case 3 -->
+<div class="p-7 rounded-xl border border-vault-200 bg-vault-50/40 hover:bg-white hover:shadow-vault-card transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-vault-900 text-white flex items-center justify-center mb-5">
+<span class="material-symbols-outlined text-xl">business</span>
+</div>
+<h3 class="font-heading text-lg font-bold text-vault-950 mb-2">
+Small Businesses &amp; Startups
+</h3>
+<p class="text-xs sm:text-sm text-vault-600 leading-relaxed mb-6 font-sans">
+Centralize SaaS subscriptions, vendor contracts, and monthly operational receipts with clear, unified tagging.
+</p>
+</div>
+<div class="pt-4 border-t border-vault-200/80 space-y-2 text-xs text-vault-700">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-sm">check</span>
+<span>Unified repository for the core team</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-sm">check</span>
+<span>Renewal dates clearly mapped</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TRANSPARENT PRICING & EARLY ACCESS (2-Tier Model) -->
+<section class="py-20 bg-vault-50/60 border-b border-vault-200" id="pricing">
+<div class="max-w-5xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-[#006194] mb-3">
+<span class="w-2 h-2 rounded-full bg-[#006194]"></span>
+<span>Transparent Pricing</span>
+</div>
+<h2 class="font-heading text-3xl sm:text-4xl font-bold text-vault-950 tracking-tight">
+Start free. Scale whenever you need.
+</h2>
+<p class="text-sm sm:text-base text-vault-600 mt-2 font-sans">
+No hidden fees, no contract lock-in. Cancel anytime with full data export.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- Tier 1: Free -->
+<div class="p-8 rounded-xl border border-vault-200 bg-white shadow-vault-card flex flex-col justify-between space-y-8">
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-mono font-semibold uppercase tracking-wider text-vault-500">
+BASE PLAN
+</span>
+<span class="text-[11px] font-mono px-2 py-0.5 rounded bg-vault-100 text-vault-700">No Credit Card</span>
+</div>
+<h3 class="font-heading text-2xl font-bold text-vault-950">Free</h3>
+<div class="mt-3 flex items-baseline gap-1">
+<span class="text-4xl font-bold font-mono text-vault-950">€0</span>
+<span class="text-xs text-vault-500 font-mono">/ forever</span>
+</div>
+<p class="text-xs text-vault-600 mt-3 leading-relaxed font-sans">
+Ideal for personal invoices and hassle-free household receipt organization.
+</p>
+<div class="pt-6 mt-6 border-t border-vault-100 space-y-3 text-xs text-vault-700">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-base">check</span>
+<span><strong>30 documents</strong> per month</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-base">check</span>
+<span>Core AI field extraction</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-base">check</span>
+<span>Certified EU cloud hosting</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-base">check</span>
+<span>Standard PDF exports</span>
+</div>
+</div>
+</div>
+<div>
+<a class="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-vault-100 hover:bg-vault-200 text-vault-900 font-medium text-xs transition-all border border-vault-200" href="#demo">
+Get Started Free
+</a>
+</div>
+</div>
+<!-- Tier 2: Pro / Early Access -->
+<div class="p-8 rounded-xl border-2 border-[#006194] bg-white shadow-vault-elevated flex flex-col justify-between space-y-8 relative">
+<span class="absolute -top-3 right-6 bg-[#006194] text-white text-[10px] font-mono font-semibold px-2.5 py-0.5 rounded-full shadow-xs uppercase tracking-wider">
+Early Access
+</span>
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#006194]">
+FULL ACCESS
+</span>
+<span class="text-[11px] font-mono px-2 py-0.5 rounded bg-blue-50 text-[#006194] font-semibold">Pioneer Terms</span>
+</div>
+<h3 class="font-heading text-2xl font-bold text-vault-950">Pro</h3>
+<div class="mt-3 flex items-baseline gap-1">
+<span class="text-4xl font-bold font-mono text-vault-950">€7</span>
+<span class="text-xs text-vault-500 font-mono">/ month</span>
+</div>
+<p class="text-xs text-vault-600 mt-3 leading-relaxed font-sans">
+For complete automation, dedicated inbound email forwarding, and automatic expiry tracking.
+</p>
+<div class="pt-6 mt-6 border-t border-vault-100 space-y-3 text-xs text-vault-700">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-base">check</span>
+<span><strong>Unlimited documents</strong></span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-base">check</span>
+<span>Dedicated inbound forward email address</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-base">check</span>
+<span>Warranty &amp; contract renewal alerts</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-base">check</span>
+<span>Structured accounting exports (CSV/Excel/ZIP)</span>
+</div>
+</div>
+</div>
+<div>
+<a class="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-vault-950 hover:bg-vault-800 text-white font-medium text-xs transition-all shadow-sm" href="#demo">
+<span>Join Early Access</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FREQUENTLY ASKED QUESTIONS (FAQ) -->
+<section class="py-20 bg-white border-b border-vault-200" id="faq">
+<div class="max-w-3xl mx-auto px-6">
+<div class="text-center mb-12">
+<span class="font-mono text-xs uppercase tracking-wider text-vault-500 font-semibold">
+Clear Answers
+</span>
+<h2 class="font-heading text-3xl font-bold text-vault-950 mt-1 mb-2">
+Frequently Asked Questions
+</h2>
+<p class="text-xs sm:text-sm text-vault-600 font-sans">
+Everything you need to know about how Payperless works.
+</p>
+</div>
+<div class="space-y-3">
+<!-- FAQ 1 -->
+<div class="border border-vault-200 rounded-lg overflow-hidden bg-vault-50/30">
+<button class="w-full p-4 text-left flex items-center justify-between text-xs sm:text-sm font-semibold text-vault-900 hover:text-vault-950" onclick="toggleFaq('faq-1')">
+<span>1. What exactly is Payperless?</span>
+<span class="material-symbols-outlined text-vault-400 text-base transition-transform" id="icon-faq-1">expand_more</span>
+</button>
+<div class="hidden p-4 pt-0 text-xs text-vault-600 leading-relaxed border-t border-vault-200/50 mt-2 font-sans" id="faq-1">
+Payperless is a web application designed to centralize, organize, and manage your important documents — such as utility invoices, equipment warranties, and contracts. It uses vision AI to extract key data so you never lose proof of purchase or miss a renewal date.
+</div>
+</div>
+<!-- FAQ 2 -->
+<div class="border border-vault-200 rounded-lg overflow-hidden bg-vault-50/30">
+<button class="w-full p-4 text-left flex items-center justify-between text-xs sm:text-sm font-semibold text-vault-900 hover:text-vault-950" onclick="toggleFaq('faq-2')">
+<span>2. Can the AI make mistakes during extraction?</span>
+<span class="material-symbols-outlined text-vault-400 text-base transition-transform" id="icon-faq-2">expand_more</span>
+</button>
+<div class="hidden p-4 pt-0 text-xs text-vault-600 leading-relaxed border-t border-vault-200/50 mt-2 font-sans" id="faq-2">
+Yes, no AI or OCR system is 100% infallible across every unusual receipt format. That is why Payperless is designed with human-in-the-loop oversight: we always display the original document side-by-side with extracted values, allowing you to edit or correct any field in one click before saving.
+</div>
+</div>
+<!-- FAQ 3 -->
+<div class="border border-vault-200 rounded-lg overflow-hidden bg-vault-50/30">
+<button class="w-full p-4 text-left flex items-center justify-between text-xs sm:text-sm font-semibold text-vault-900 hover:text-vault-950" onclick="toggleFaq('faq-3')">
+<span>3. What file formats can I upload?</span>
+<span class="material-symbols-outlined text-vault-400 text-base transition-transform" id="icon-faq-3">expand_more</span>
+</button>
+<div class="hidden p-4 pt-0 text-xs text-vault-600 leading-relaxed border-t border-vault-200/50 mt-2 font-sans" id="faq-3">
+You can upload standard PDF documents as well as smartphone photos in JPG, PNG, and HEIC formats. The system automatically handles rotation and readability optimization for smooth parsing.
+</div>
+</div>
+<!-- FAQ 4 -->
+<div class="border border-vault-200 rounded-lg overflow-hidden bg-vault-50/30">
+<button class="w-full p-4 text-left flex items-center justify-between text-xs sm:text-sm font-semibold text-vault-900 hover:text-vault-950" onclick="toggleFaq('faq-4')">
+<span>4. Can I export all my data if I decide to leave?</span>
+<span class="material-symbols-outlined text-vault-400 text-base transition-transform" id="icon-faq-4">expand_more</span>
+</button>
+<div class="hidden p-4 pt-0 text-xs text-vault-600 leading-relaxed border-t border-vault-200/50 mt-2 font-sans" id="faq-4">
+We do not believe in vendor lock-in. You can download a full archive containing all your original files in a single ZIP file alongside a structured CSV spreadsheet of all metadata whenever you choose, or request complete account erasure.
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CALL TO ACTION (Minimalist Dark Vault Aesthetic) -->
+<section class="py-20 bg-vault-950 text-white relative overflow-hidden">
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vault-900 border border-vault-800 text-vault-300 text-xs font-mono mb-6">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span>European Digital Sovereignty</span>
+</div>
+<h2 class="font-heading text-3xl sm:text-5xl font-bold tracking-tight mb-5 leading-tight">
+Your documents deserve a vault,<br/>not an unorganized folder.
+</h2>
+<p class="text-sm sm:text-base text-vault-400 max-w-xl mx-auto mb-8 leading-relaxed font-sans">
+Experience total peace of mind organizing expenses, warranties, and contracts with clarity and zero privacy compromises.
+</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-white text-vault-950 hover:bg-vault-100 font-semibold text-xs tracking-tight transition-all" href="#pricing">
+<span>Get Started Free</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-vault-900 hover:bg-vault-800 text-vault-300 border border-vault-800 font-medium text-xs transition-all" href="#demo">
+<span>View Demo</span>
+</a>
+</div>
+<div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-[11px] font-mono text-vault-500">
+<span>AES-256-GCM Encrypted</span>
+<span>•</span>
+<span>Zero-Knowledge Architecture</span>
+<span>•</span>
+<span>Hosted in EU</span>
+</div>
+</div>
+</section>
+<!-- CLEAN MINIMALIST FOOTER -->
+<footer class="bg-white border-t border-vault-200 py-12 text-vault-600 text-xs">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 pb-10 border-b border-vault-200/70">
+<div class="md:col-span-2 space-y-3">
+<div class="flex items-center gap-2.5">
+<img alt="Payperless" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrAvNsZsST6paiCMdp4cHzxf8-htF5myG3jmAM9IVorgq-QoTl8H-6Zv5Iw-pO07Y6kbsAzCIgwnTrvoLREm6SA8N8MWv7S54v-fZ0e2JIJ_h3fqLg40LNEuamFV2AMYtcKfoPqjf1flm1Qn0HTytwXdTxY7rBeBDYdqr8ss1zinlXMEQ6KOz3xanW1_At-StV7cHX-pvlfX8g-BZSlWfJOiqTzprUbIq_0ZIJEHoxiXAmeOY3UeNX"/>
+<span class="font-heading font-bold text-sm text-vault-950">Payperless</span>
+</div>
+<p class="text-vault-500 text-xs leading-relaxed max-w-sm font-sans">
+Simple and intelligent organization of invoices, contracts, and warranties with AI extraction and strict privacy.
+</p>
+<div class="flex items-center gap-2 text-[11px] font-mono text-vault-500">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>Servers hosted in the European Union (GDPR)</span>
+</div>
+</div>
+<div class="space-y-2">
+<h4 class="font-semibold text-vault-900 text-xs">Product</h4>
+<ul class="space-y-1.5 text-vault-500">
+<li><a class="hover:text-vault-950 transition-colors" href="#demo">Workspace</a></li>
+<li><a class="hover:text-vault-950 transition-colors" href="#features">Features</a></li>
+<li><a class="hover:text-vault-950 transition-colors" href="#pricing">Pricing</a></li>
+</ul>
+</div>
+<div class="space-y-2">
+<h4 class="font-semibold text-vault-900 text-xs">Privacy</h4>
+<ul class="space-y-1.5 text-vault-500">
+<li><a class="hover:text-vault-950 transition-colors" href="#security">Data Commitment</a></li>
+<li><a class="hover:text-vault-950 transition-colors" href="#security">EU Hosting</a></li>
+<li><a class="hover:text-vault-950 transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-2">
+<h4 class="font-semibold text-vault-900 text-xs">Contact</h4>
+<ul class="space-y-1.5 text-vault-500">
+<li><a class="hover:text-vault-950 transition-colors" href="mailto:ola@payperless.pt">User Support</a></li>
+<li><a class="hover:text-vault-950 transition-colors" href="#faq">FAQ</a></li>
+<li><a class="hover:text-vault-950 transition-colors" href="#pricing">Sign In</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-vault-400 text-[11px]">
+<p>© 2026 Payperless. All rights reserved. Designed for simplicity and transparency.</p>
+<div class="flex items-center gap-4 font-mono">
+<span>v2.8</span>
+<span>•</span>
+<span>Payperless Studio</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- INTERACTIVE SCRIPTS -->
+<script>
+  // Language button feedback
+  function toggleLanguageNotice(lang) {
+    const btnPt = document.getElementById('btn-pt');
+    const btnEn = document.getElementById('btn-en');
+    if (lang === 'pt') {
+      btnPt.className = "px-2 py-0.5 rounded font-semibold bg-vault-900 text-white transition-all";
+      btnEn.className = "px-2 py-0.5 rounded font-semibold text-vault-600 hover:text-vault-950 transition-all";
+    } else {
+      btnEn.className = "px-2 py-0.5 rounded font-semibold bg-vault-900 text-white transition-all";
+      btnPt.className = "px-2 py-0.5 rounded font-semibold text-vault-600 hover:text-vault-950 transition-all";
+    }
+  }
+
+  // Interactive AI Extraction Simulation
+  function simulateExtractionFlow() {
+    const overlay = document.getElementById('scanning-overlay');
+    const badge = document.getElementById('doc-status-badge');
+    const simBadge = document.getElementById('simulation-badge');
+    
+    if (overlay) {
+      overlay.classList.remove('hidden');
+      if (badge) {
+        badge.textContent = "EXTRACTING...";
+        badge.className = "text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-50 text-[#006194] font-semibold border border-blue-200 shrink-0";
+      }
+
+      setTimeout(() => {
+        overlay.classList.add('hidden');
+        if (badge) {
+          badge.textContent = "SUCCESSFULLY EXTRACTED";
+          badge.className = "text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200 shrink-0";
+        }
+        if (simBadge) {
+          simBadge.innerHTML = '<span class="text-emerald-700 font-medium">✓ Extraction completed successfully</span>';
+        }
+      }, 1200);
+    }
+  }
+
+  // Save Document review feedback
+  function saveDocumentReview() {
+    const btn = document.getElementById('btn-save-doc');
+    const btnText = document.getElementById('btn-save-text');
+    if (btn && btnText) {
+      btnText.textContent = "Saved ✓";
+      btn.classList.remove('bg-vault-950');
+      btn.classList.add('bg-emerald-700');
+      setTimeout(() => {
+        btnText.textContent = "Review & Save";
+        btn.classList.remove('bg-emerald-700');
+        btn.classList.add('bg-vault-950');
+      }, 2000);
+    }
+  }
+
+  // Accordion Toggle
+  function toggleFaq(id) {
+    const el = document.getElementById(id);
+    const icon = document.getElementById('icon-' + id);
+    const isHidden = el.classList.contains('hidden');
+
+    document.querySelectorAll('[id^="faq-"]').forEach(item => {
+      if (!item.id.includes('icon') && !item.id.includes('btn')) {
+        item.classList.add('hidden');
+      }
+    });
+    document.querySelectorAll('[id^="icon-faq-"]').forEach(ico => {
+      ico.textContent = 'expand_more';
+    });
+
+    if (isHidden) {
+      el.classList.remove('hidden');
+      if (icon) icon.textContent = 'expand_less';
+    }
+  }
+</script>
+</body></html>
